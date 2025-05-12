@@ -1,26 +1,36 @@
 #include "Player.h"
+#include "IAttacker.h"
 
-using namespace std;
-
-void Player::update()
+namespace AQ_QuetzLab
 {
-	if (IsKeyDown(KEY_A))
+
+	using namespace std;
+
+	void Fire() override
 	{
-		position.x -= speed * GetFrameTime();
+		cout << "fuego!" << endl;
 	}
 
-	if (IsKeyDown(KEY_W))
+	void Player::update()
 	{
-		position.y -= speed * GetFrameTime();
-	}
+		if (IsKeyDown(KEY_A))
+		{
+			position.x -= speed * GetFrameTime();
+		}
 
-	if (IsKeyDown(KEY_D))
-	{
-		position.x += speed * GetFrameTime();
-	}
+		if (IsKeyDown(KEY_W))
+		{
+			position.y -= speed * GetFrameTime();
+		}
 
-	if (IsKeyDown(KEY_S))
-	{
-		position.y += speed * GetFrameTime();
+		if (IsKeyDown(KEY_D))
+		{
+			position.x += speed * GetFrameTime();
+		}
+
+		if (IsKeyDown(KEY_S))
+		{
+			position.y += speed * GetFrameTime();
+		}
 	}
 }

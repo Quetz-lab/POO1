@@ -530,6 +530,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\include\EjemploConstCast.h" />
     <ClInclude Include="..\..\include\GameObject.h" />
+    <ClInclude Include="..\..\include\IAttacker.h" />
     <ClInclude Include="..\..\include\Player.h" />
     <ClInclude Include="..\..\include\resource_dir.h" />
     <ClInclude Include="..\..\include\Sidekick.h" />

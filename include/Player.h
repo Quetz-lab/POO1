@@ -1,27 +1,30 @@
 #pragma once
 #include "GameObject.h"
 #include <iostream>
-
-using namespace std;
-
-class Player :
-    public GameObject
+namespace AQ_QuetzLab
 {
-public:
-    float speed = 10.0f;
-    Player(Vector2 pos, string _name, Texture tex):
-        GameObject(pos, _name, tex) { }
 
-    void update() override;
+    using namespace std;
 
-    void attack()
+    class Player :
+        public GameObject, public IAttacker
     {
-        cout << name << "Atacando" << endl;
-    }
+    public:
+        float speed = 10.0f;
+        Player(Vector2 pos, string _name, Texture tex) :
+            GameObject(pos, _name, tex) {
+        }
 
-    void flee()
-    {
-        cout << name << "Huye como cobarde" << endl;
-    }
-};
+        void update() override;
 
+        void attack()
+        {
+            cout << name << "Atacando" << endl;
+        }
+
+        void flee()
+        {
+            cout << name << "Huye como cobarde" << endl;
+        }
+    };
+}
