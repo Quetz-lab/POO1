@@ -8,6 +8,7 @@ namespace AQ_QuetzLab
 
 	void Fire() override
 	{
+	
 		cout << "fuego!" << endl;
 	}
 

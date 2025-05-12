@@ -1,5 +1,6 @@
 #pragma once
 #include "GameObject.h"
+#include "IAttacker.h"
 #include <iostream>
 namespace AQ_QuetzLab
 {
