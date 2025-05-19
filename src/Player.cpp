@@ -34,4 +34,43 @@ namespace AQ_QuetzLab
 			position.y += speed * GetFrameTime();
 		}
 	}
+	void Player::SetSidekick(Sidekick* newSidekick, int index)
+	{
+		if (index >= 0 && index < 3)
+		{
+			sideKicks[index] = newSidekick;
+		}
+		else
+		{
+			cout << "Indice de sidekick invalido" << endl;
+		}
+	}
+	void Player::Fire()
+	{
+
+	}
+	IAttacker* Player::SetWeapon(IAttacker* newWeapon)
+	{
+		if (newWeapon)
+		{
+			weapon = newWeapon;
+			Weapon w = dynamic_cast <Weapon*>(weapon);
+			if (w)
+			{
+				cout << "cambiando arma a " << w->name << endl;
+
+
+				for (int i = 0; i < 3;i++)
+				{
+					if (sideKicks[i])
+					{
+
+					}
+				}
+
+				return weapon;
+			}
+			return nullptr;
+		}
+	}
 }
