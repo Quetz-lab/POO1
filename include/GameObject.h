@@ -14,12 +14,18 @@ namespace AQ_QuetzLab
 		Texture texture;
 		bool displayName = false;
 
+		GameObject() :
+			position({0,0}),
+			name("GameObject"),
+			texture({0})
+		{ }
+
 		GameObject(Vector2 pos, string _name, Texture tex) :
 			position(pos), name(_name), texture(tex) {
 		}
 
 		virtual void update();
-		void draw();
+		virtual void draw();
 
 	};
 }

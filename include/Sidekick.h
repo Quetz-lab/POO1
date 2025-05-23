@@ -2,7 +2,9 @@
 #include "GameObject.h"
 #include "Player.h"
 #include "raymath.h"
+#include <iostream>
 namespace AQ_QuetzLab {
+    using namespace AQ_QuetzLab;
     class Sidekick :
         public GameObject
     {
@@ -18,12 +20,12 @@ namespace AQ_QuetzLab {
         void update() override;
         void attack()
         {
-            cout << name << "Atacando" << endl;
+           std::cout << name << "Atacando" << std::endl;
         }
 
         void flee()
         {
-            cout << name << "Huye como cobarde" << endl;
+            std::cout << name << "Huye como cobarde" << std::endl;
         }
     };
 }

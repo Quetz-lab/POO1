@@ -6,6 +6,25 @@
 #include <iostream>
 namespace AQ_QuetzLab
 {
+    using namespace AQ_QuetzLab;
+    enum EAnimDirection
+    {
+        ANIM_DOWN,
+        ANIM_UP,
+        ANIM_LEFT,
+        ANIM_RIGHT
+    };
+
+    struct SAnimData
+    {
+        int currFrame;
+        int maxFrame;
+        int frameSpeed = 10;
+        int frameCount;
+        float spriteWidth;
+        float spriteHeight;
+        EAnimDirection dir;
+    };
 
     using namespace std;
 
@@ -15,12 +34,21 @@ namespace AQ_QuetzLab
     public:
         float speed = 10.0f;
         Player(Vector2 pos, string _name, Texture tex) :
-            GameObject(pos, _name, tex)
+            weapon(nullptr)
         {
-        
-        }
+            texture = LoadTexture("PlayerF.png");
+            animData = { 0,4,66,100 };
+            animData.maxFrame = 4;
+            animData.frameSpeed = 30;
+
+            name = _name;
+            position = pos;
+
+        };
 
         void update() override;
+
+        void draw() override;
 
         void attack()
         {
@@ -41,5 +69,6 @@ namespace AQ_QuetzLab
         IAttacker* weapon;
 
         Sidekick sideKicks[3];
+        SAnimData animData;
     };
 }
